@@ -1,0 +1,98 @@
+/* ─── Design Tokens ──────────────────────────────────────────── */
+:root {
+  /* Canvas */
+  --clr-bg:               #0b0d14;
+  --clr-canvas:           #0f1117;
+  --clr-grid-dot:         rgba(255, 255, 255, 0.04);
+
+  /* Surfaces */
+  --clr-surface-0:        #0f1117;
+  --clr-surface-1:        #161921;
+  --clr-surface-2:        #1e2130;
+  --clr-surface-3:        #252a3d;
+
+  /* Borders */
+  --clr-border:           rgba(255, 255, 255, 0.07);
+  --clr-border-hover:     rgba(255, 255, 255, 0.15);
+
+  /* Accents */
+  --clr-accent-primary:   #7c6cfc;   /* violet  – start nodes  */
+  --clr-accent-info:      #3b82f6;   /* blue    – question nodes */
+  --clr-accent-success:   #10b981;   /* emerald – success states  */
+  --clr-accent-warning:   #f59e0b;   /* amber   – end nodes       */
+  --clr-accent-danger:    #ef4444;   /* red     – errors          */
+
+  /* Node type colors */
+  --clr-node-start:       var(--clr-accent-primary);
+  --clr-node-question:    var(--clr-accent-info);
+  --clr-node-end:         var(--clr-accent-warning);
+
+  /* Connectors */
+  --clr-connector:        rgba(255, 255, 255, 0.18);
+  --clr-connector-active: var(--clr-accent-primary);
+
+  /* Text */
+  --clr-text-primary:     #f1f5f9;
+  --clr-text-secondary:   #94a3b8;
+  --clr-text-muted:       #475569;
+  --clr-text-inverted:    #0f1117;
+
+  /* Typography */
+  --font-size-xs:   0.6875rem;  /* 11px */
+  --font-size-sm:   0.75rem;    /* 12px */
+  --font-size-base: 0.875rem;   /* 14px */
+  --font-size-md:   1rem;       /* 16px */
+  --font-size-lg:   1.125rem;   /* 18px */
+  --font-size-xl:   1.25rem;    /* 20px */
+
+  /* Spacing */
+  --space-1:   4px;
+  --space-2:   8px;
+  --space-3:   12px;
+  --space-4:   16px;
+  --space-5:   20px;
+  --space-6:   24px;
+  --space-8:   32px;
+  --space-10:  40px;
+  --space-12:  48px;
+
+  /* Radii */
+  --radius-sm:   6px;
+  --radius-md:   10px;
+  --radius-lg:   14px;
+  --radius-xl:   20px;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm:  0 1px 3px rgba(0,0,0,0.4);
+  --shadow-md:  0 4px 16px rgba(0,0,0,0.5);
+  --shadow-lg:  0 8px 32px rgba(0,0,0,0.6);
+  --shadow-xl:  0 16px 64px rgba(0,0,0,0.7);
+  --shadow-glow-primary: 0 0 20px rgba(124, 108, 252, 0.25);
+  --shadow-glow-info:    0 0 20px rgba(59, 130, 246, 0.25);
+  --shadow-glow-warning: 0 0 20px rgba(245, 158, 11, 0.25);
+
+  /* Transitions */
+  --transition-fast:   all 0.12s ease;
+  --transition-base:   all 0.2s ease;
+  --transition-slow:   all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Z-index layers */
+  --z-canvas:    0;
+  --z-nodes:     10;
+  --z-svg:       5;
+  --z-panel:     100;
+  --z-toolbar:   200;
+  --z-overlay:   300;
+  --z-tooltip:   400;
+
+  /* Toolbar */
+  --toolbar-height: 56px;
+
+  /* Node */
+  --node-width:      260px;
+  --node-min-height:  90px;
+
+  /* Edit panel */
+  --panel-width: 320px;
+}
