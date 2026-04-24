@@ -1,0 +1,119 @@
+/* ─── Canvas Wrapper & Pan/Zoom ──────────────────────────────── */
+#canvas-wrapper {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--clr-canvas);
+  background-image:
+    radial-gradient(circle, var(--clr-grid-dot) 1px, transparent 1px);
+  background-size: 24px 24px;
+  cursor: grab;
+  transition: background-position 0s; /* updated via JS */
+  user-select: none;
+}
+
+#canvas-wrapper.grabbing {
+  cursor: grabbing;
+}
+
+#canvas-wrapper.is-preview {
+  pointer-events: none;
+}
+
+/* The transformed inner canvas */
+#canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform-origin: 0 0;
+  /* transform set via JS */
+}
+
+/* SVG overlay */
+#svg-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: visible;
+  z-index: var(--z-svg);
+}
+
+/* Nodes layer */
+#nodes-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  z-index: var(--z-nodes);
+}
+
+/* Zoom controls */
+.zoom-controls {
+  position: absolute;
+  bottom: var(--space-5);
+  right: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  z-index: var(--z-panel);
+}
+
+.zoom-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-md);
+  background: var(--clr-surface-2);
+  border: 1px solid var(--clr-border);
+  color: var(--clr-text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-md);
+  font-weight: 500;
+  transition: var(--transition-fast);
+  cursor: pointer;
+  line-height: 1;
+}
+
+.zoom-btn:hover {
+  background: var(--clr-surface-3);
+  color: var(--clr-text-primary);
+  border-color: var(--clr-border-hover);
+}
+
+.zoom-level {
+  width: 32px;
+  text-align: center;
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  color: var(--clr-text-muted);
+  padding: 2px 0;
+  cursor: pointer;
+}
+
+.zoom-level:hover {
+  color: var(--clr-text-secondary);
+}
+
+/* Mini-map hint */
+.canvas-hint {
+  position: absolute;
+  bottom: var(--space-5);
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: var(--font-size-xs);
+  color: var(--clr-text-muted);
+  background: var(--clr-surface-2);
+  border: 1px solid var(--clr-border);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
+  pointer-events: none;
+  animation: fadeInUp 0.4s ease 1s both;
+  z-index: var(--z-panel);
+}
