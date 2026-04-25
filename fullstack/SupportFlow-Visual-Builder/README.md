@@ -56,3 +56,4 @@ npm run dev
 - Click a node body to open the **Property Panel**.
 - Click the "+" branch pins on the node cards to automatically generate linked child options.
 - Use `Ctrl+Z` to **Undo**.
+ 
