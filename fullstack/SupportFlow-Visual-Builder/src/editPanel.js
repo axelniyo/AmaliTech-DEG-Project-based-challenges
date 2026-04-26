@@ -8,7 +8,12 @@ import { getState, setState } from './state.js';
 import { pushSnapshot } from './undoRedo.js';
 import { renderNodes } from './nodeCard.js';
 
-const panel = document.getElementById('edit-panel');
+let panel = null;
+
+function getPanel() {
+  if (!panel) panel = document.getElementById('edit-panel');
+  return panel;
+}
 
 let _debounceTimer = null;
 
@@ -17,9 +22,12 @@ let _debounceTimer = null;
  * @param {Function} onDelete - callback for node delete action
  */
 export function initEditPanel(onDelete) {
+  const editPanel = getPanel();
+  if (!editPanel) return;
+
   // Close on Escape
   window.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && panel.classList.contains('open')) {
+    if (e.key === 'Escape' && editPanel.classList.contains('open')) {
       closePanel();
     }
   });
@@ -38,17 +46,19 @@ export function initEditPanel(onDelete) {
 export function openPanel(nodeId) {
   const { nodes } = getState();
   const node = nodes.get(nodeId);
-  if (!node) return;
+  const editPanel = getPanel();
+  if (!node || !editPanel) return;
 
-  panel.innerHTML = buildPanelHTML(node, nodes);
-  panel.classList.add('open');
+  editPanel.innerHTML = buildPanelHTML(node, nodes);
+  editPanel.classList.add('open');
 
   attachPanelListeners(nodeId);
 }
 
 /** Close and clear the panel */
 export function closePanel() {
-  panel.classList.remove('open');
+  const editPanel = getPanel();
+  if (editPanel) editPanel.classList.remove('open');
   setState({ selectedNodeId: null });
   renderNodes();
 }
@@ -56,10 +66,11 @@ export function closePanel() {
 /** Rebuild panel if currently showing the updated node */
 export function refreshPanel() {
   const { selectedNodeId, nodes } = getState();
-  if (selectedNodeId && panel.classList.contains('open')) {
+  const editPanel = getPanel();
+  if (editPanel && selectedNodeId && editPanel.classList.contains('open')) {
     const node = nodes.get(selectedNodeId);
     if (node) {
-      panel.innerHTML = buildPanelHTML(node, nodes);
+      editPanel.innerHTML = buildPanelHTML(node, nodes);
       attachPanelListeners(selectedNodeId);
     }
   }
@@ -284,4 +295,4 @@ function escHtml(str) {
 
 
 
- 
+

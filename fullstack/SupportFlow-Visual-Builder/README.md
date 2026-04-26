@@ -9,8 +9,8 @@ SupportFlow Visual Builder is designed to help non-technical users structure and
 This project was built from the ground up without relying on heavy third-party canvas or flowcharting libraries (like React Flow), focusing heavily on direct DOM manipulation, state management, and coordinate math.
 
 ### Live Demo
-- **Live Deployment**: *(Add your deployment link here)*
-- **Design System**: *(Add your Penpot link here)*
+- **Live Deployment**: [SupportFlow Live](https://axelniyo.github.io/AmaliTech-DEG-Project-based-challenges/)
+- **Design System**: [Penpot Workflow Design](https://design.penpot.app/#/view?file-id=614162e1-9f0e-816a-8007-ef11f9098d90&page-id=614162e1-9f0e-816a-8007-ef11f9098d91&section=interactions&index=0&share-id=c13b245b-18ea-8002-8007-ef1df38f323a)
 
 ## Core Features
 

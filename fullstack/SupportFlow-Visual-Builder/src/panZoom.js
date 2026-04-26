@@ -11,13 +11,13 @@ import { getState, setState } from './state.js';
 import { drawConnectors } from './svgLayer.js';
 
 const canvasWrapper = document.getElementById('canvas-wrapper');
-const canvas        = document.getElementById('canvas');
+const canvas = document.getElementById('canvas');
 
 const MIN_SCALE = 0.25;
 const MAX_SCALE = 2.5;
 
 let isPanning = false;
-let panStart  = { x: 0, y: 0 };
+let panStart = { x: 0, y: 0 };
 let panOrigin = { x: 0, y: 0 };
 
 export function initPanZoom() {
@@ -36,7 +36,7 @@ function onPanStart(e) {
   if (e.target.closest('.zoom-controls')) return;
 
   isPanning = true;
-  panStart  = { x: e.clientX, y: e.clientY };
+  panStart = { x: e.clientX, y: e.clientY };
   const { pan } = getState();
   panOrigin = { ...pan };
 
@@ -64,16 +64,16 @@ function onWheel(e) {
   const { scale, pan } = getState();
 
   // Mouse position relative to canvas wrapper
-  const rect    = canvasWrapper.getBoundingClientRect();
-  const mouseX  = e.clientX - rect.left;
-  const mouseY  = e.clientY - rect.top;
+  const rect = canvasWrapper.getBoundingClientRect();
+  const mouseX = e.clientX - rect.left;
+  const mouseY = e.clientY - rect.top;
 
   // Point in canvas-space under cursor before zoom
   const canvasX = (mouseX - pan.x) / scale;
   const canvasY = (mouseY - pan.y) / scale;
 
   // New scale
-  const delta    = e.deltaY < 0 ? 1.1 : 0.9;
+  const delta = e.deltaY < 0 ? 1.1 : 0.9;
   const newScale = Math.min(MAX_SCALE, Math.max(MIN_SCALE, scale * delta));
 
   // Adjust pan so the canvas-space point stays under the cursor
@@ -95,7 +95,7 @@ export function applyTransform() {
 
 /** Reset to default view */
 export function resetView() {
-  setState({ scale: 1, pan: { x: 80, y: 60 } });
+  setState({ scale: 0.7, pan: { x: 255, y: 65 } });
   applyTransform();
   updateZoomLabel();
 }
@@ -104,7 +104,7 @@ export function resetView() {
 export function zoomIn() {
   const { scale, pan } = getState();
   const newScale = Math.min(MAX_SCALE, scale * 1.2);
-  const cx = canvasWrapper.clientWidth  / 2;
+  const cx = canvasWrapper.clientWidth / 2;
   const cy = canvasWrapper.clientHeight / 2;
   const canvasX = (cx - pan.x) / scale;
   const canvasY = (cy - pan.y) / scale;
@@ -120,7 +120,7 @@ export function zoomIn() {
 export function zoomOut() {
   const { scale, pan } = getState();
   const newScale = Math.max(MIN_SCALE, scale * 0.8);
-  const cx = canvasWrapper.clientWidth  / 2;
+  const cx = canvasWrapper.clientWidth / 2;
   const cy = canvasWrapper.clientHeight / 2;
   const canvasX = (cx - pan.x) / scale;
   const canvasY = (cy - pan.y) / scale;

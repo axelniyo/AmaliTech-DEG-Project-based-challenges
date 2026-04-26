@@ -13,9 +13,9 @@ const initialState = {
   /** @type {string|null} */
   previewCurrentNodeId: null,
   /** @type {number} */
-  scale: 1,
+  scale: 0.7,
   /** @type {{x:number, y:number}} */
-  pan: { x: 80, y: 60 },
+  pan: { x: 255, y: 15 },
 };
 
 let state = { ...initialState };
