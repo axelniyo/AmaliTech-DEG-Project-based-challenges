@@ -1,0 +1,110 @@
+{
+  "name": "Root",
+  "id": "root",
+  "type": "folder",
+  "children": [
+    {
+      "id": "root_1",
+      "name": "Legal Department",
+      "type": "folder",
+      "children": [
+        {
+          "id": "leg_1",
+          "name": "Active Cases",
+          "type": "folder",
+          "children": [
+            {
+              "id": "case_a",
+              "name": "Doe vs MegaCorp Inc",
+              "type": "folder",
+              "children": [
+                {
+                  "id": "file_1",
+                  "name": "Case Summary Draft v3.docx",
+                  "type": "file",
+                  "size": "45KB",
+                  "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+                  "lastModified": "2024-03-15T10:00:00Z"
+                },
+                {
+                  "id": "file_2",
+                  "name": "Email Thread Jan2024.pdf",
+                  "type": "file",
+                  "size": "4.2MB",
+                  "mimeType": "application/pdf",
+                  "lastModified": "2024-01-25T14:30:00Z"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "root_2",
+      "name": "Finance Team",
+      "type": "folder",
+      "children": [
+        {
+          "id": "fin_1",
+          "name": "Payroll",
+          "type": "folder",
+          "children": [
+            {
+              "id": "file_3",
+              "name": "February 2025.xlsx",
+              "type": "file",
+              "size": "2.1MB",
+              "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+              "lastModified": "2024-02-01T09:00:00Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "root_3",
+      "name": "IT Security",
+      "type": "folder",
+      "children": [
+        {
+          "id": "sec_1",
+          "name": "Server Logs",
+          "type": "folder",
+          "children": [
+            {
+              "id": "file_4",
+              "name": "access_log_main.txt",
+              "type": "file",
+              "size": "45MB",
+              "mimeType": "text/plain",
+              "lastModified": "2024-04-27T12:00:00Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "root_4",
+      "name": "Shared Resources",
+      "type": "folder",
+      "children": [
+        {
+          "id": "brand_1",
+          "name": "Brand Assets",
+          "type": "folder",
+          "children": [
+            {
+              "id": "file_5",
+              "name": "SecureVault Logo.svg",
+              "type": "file",
+              "size": "15KB",
+              "mimeType": "image/svg+xml",
+              "lastModified": "2023-12-10T08:00:00Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
