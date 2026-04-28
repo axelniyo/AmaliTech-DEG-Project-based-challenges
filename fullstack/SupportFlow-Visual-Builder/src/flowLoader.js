@@ -7,7 +7,7 @@ import { setState } from './state.js';
  * Load flow data from /flow_data.json and hydrate state.
  */
 export async function loadFlow() {
-  const res = await fetch('/flow_data.json');
+  const res = await fetch('./flow_data.json');
   if (!res.ok) throw new Error(`Failed to load flow data: ${res.status}`);
 
   const data = await res.json();

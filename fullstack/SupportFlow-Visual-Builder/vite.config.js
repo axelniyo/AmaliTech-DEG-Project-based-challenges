@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  base: process.env.NODE_ENV === 'production' ? '/AmaliTech-DEG-Project-based-challenges/' : '/',
+  base: './',
   build: {
     outDir: 'dist',
   }

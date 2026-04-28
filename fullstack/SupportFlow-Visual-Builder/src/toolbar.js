@@ -37,7 +37,6 @@ function buildToolbarHTML() {
   return `
     <!-- Logo -->
     <div class="toolbar-logo">
-      <div class="toolbar-logo-icon">⚡</div>
       <span class="toolbar-logo-text">SupportFlow</span>
       <span class="toolbar-logo-badge">Visual Builder</span>
     </div>
@@ -141,15 +140,15 @@ function attachToolbarListeners() {
       };
       const newMap = new Map();
       newMap.set('1', startNode);
-      
+
       setState({ nodes: newMap, selectedNodeId: '1' });
       pushSnapshot();
       renderNodes();
       updateStats();
-      
+
       // Auto-open panel for the fresh start node
       import('./editPanel.js').then(module => {
-         module.openPanel('1');
+        module.openPanel('1');
       });
     }
   });
@@ -198,7 +197,7 @@ export function addNewNode(x, y, parentId = null, branchIdx = null) {
   let spawnY = y;
   if (spawnX === undefined || spawnY === undefined) {
     const wrapper = document.getElementById('canvas-wrapper');
-    spawnX = Math.max(0, (wrapper.clientWidth  / 2 - pan.x) / scale - 130);
+    spawnX = Math.max(0, (wrapper.clientWidth / 2 - pan.x) / scale - 130);
     spawnY = Math.max(0, (wrapper.clientHeight / 2 - pan.y) / scale - 50);
   }
 
